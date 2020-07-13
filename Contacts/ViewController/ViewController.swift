@@ -121,6 +121,7 @@ extension ViewController: SwipeTableViewCellDelegate {
             }
         }
         // customize the action appearance
+        // just to check git credentials
         deleteAction.image = UIImage(systemName: "trash")
 
         return [deleteAction]
