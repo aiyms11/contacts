@@ -1,0 +1,20 @@
+PODS:
+  - SnapKit (4.2.0)
+  - SwipeCellKit (2.7.1)
+
+DEPENDENCIES:
+  - SnapKit
+  - SwipeCellKit
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+    - SwipeCellKit
+
+SPEC CHECKSUMS:
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
+
+PODFILE CHECKSUM: ebe0a6bc2bb6a6a4b6fb3dec5da15ce39317cb47
+
+COCOAPODS: 1.8.4
