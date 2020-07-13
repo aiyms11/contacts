@@ -52,42 +52,11 @@ class ViewModelCM {
     var contactManager = ContactManager()
     
     var updateTableContent: (() -> Void)?
-    var createContact: (() -> Void)?
-    
-    var contactIndex: Int?
-    var sectionHeader: Character?
-    
-    var firstName: String?
-    var lastName: String?
-    var phone: String?
-    
+
     func getTableData(contacts: [ContactDetails]) {
         tableViewSource = contactManager.createTableData(contactList: contacts).source
         tableViewHeaders = contactManager.createTableData(contactList: contacts).firstSymbols
         updateTableContent?()
-    }
-    
-    func changeContact(_ firstname: String, _ lastname: String, _ phone: String) {
-        self.firstName = nil
-        self.lastName = nil
-        self.phone = nil
-        if let header = sectionHeader, let index = contactIndex {
-            if header == contactManager.getFirstSymbol(word: firstname){
-                tableViewSource?[header]?[index].firstName = firstname
-                tableViewSource?[header]?[index].lastName = lastname
-                tableViewSource?[header]?[index].number = phone
-                contactIndex = nil
-                sectionHeader = nil
-                updateTableContent?()
-            } else {
-                tableViewSource?[header]?.remove(at: index)
-                self.firstName = firstname
-                self.lastName = lastname
-                self.phone = phone
-                createContact?()
-                updateTableContent?()
-            }
-        }
     }
 }
 
